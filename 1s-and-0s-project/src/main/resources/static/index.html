@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        
+        header {
+            display: flex; /* Use flexbox for layout */
+            justify-content: space-between; /* Space between heading and menu */
+            align-items: center; /* Center items vertically */
+            padding: 0 30px 0 30px; /* Reduced padding */
+            background-color: rgba(44, 62, 80, 0.6); /* Semi-transparent dark blue */
+        }
+
+        h1 {
+            font-size: 30px; /* Reduced font size */
+            color: white;
+        }
+
+        .menu {
+            list-style-type: none; /* Remove default list styling */
+            padding: 0; /* Remove padding */
+            margin: 0; /* Remove margin */
+        }
+
+        .menu li {
+            display: inline-block; /* Display menu items inline */
+            margin-left: 15px; /* Space between menu items */
+        }
+
+        .menu a {
+            text-decoration: none; /* Remove underline */
+            color: white; /* Text color */
+            font-size: 16px; /* Adjust font size for menu items */
+            transition: color 0.3s; /* Smooth transition */
+        }
+
+        .menu a:hover {
+            color: #FFD700; /* Change color on hover */
+        }
+
+        .container {
+            display: flex; /* Use flexbox for layout */
+            padding: 20px;
+            margin: 20px; /* Center the content */
+        }
+
+        .content {
+            flex: 1; /* Take up remaining space */
+            padding: 20px;
+            text-align: left; /* Align text to the left */
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-right: 20px; /* Space between content and news */
+        }
+
+        .rectangle {
+            width: 310px;
+            height: 510px;
+            background-color: #ECF0F1; /* Light Gray */
+            border-radius: 8px; /* Rounded corners */
+            overflow: hidden; /* Hide overflow for scrolling */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .news {
+            height: 100%; /* Full height of the rectangle */
+            overflow-y: auto; /* Enable vertical scrolling */
+            padding: 10px;
+            color: #34495E; /* Dark Gray */
+        }
+
+        .news-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #ffffff; /* White */
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .bottom-rectangle {
+            font-size: 15px;
+            font-weight: bold;
+            width: 74.5%;
+            height: 60px; /* Adjusted height */
+            background-color: white;
+            padding: 20px; /* Add padding for spacing */
+            position: fixed; /* Keep it fixed at the bottom */
+            bottom: 0; /* Position it at the bottom */
+            left: 0; /* Align it to the left */
+            display: flex; /* Use flexbox */
+            align-items: center; /* Center items vertically */
+        }
+        
+        .bottom-rectangle p {
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0; /* Remove default margin */
+            margin-left: 10px; /* Add some space between the image and text */
+        }
+        
+        .bottom-rectangle img {
+            width: 50px; /* Adjust image width as needed */
+            height: 50px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Mokhosi</h1>
+        <nav class="menu">
+            <ul>
+                <li><a href="services-page.html">Services</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="news-page.html">News</a></li>
+                <li><a href="report-crimes-page.html">Report Crime</a></li>
+                <li><a href="chatbot.html">Chat</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="content">
+            <h2>Welcome to Mokhosi</h2>
+            <p> Mokhosi provides a secure and anonymous space
+            to report crimes. With just a few clicks, you can
+            confidentially share vital information with law enforcement.
+            Our advanced security measures protect your identity and 
+            ensure your safety. By empowering individuals to speak up,
+            we contribute to a safer community. Join us in the fight
+            against crime. Your voice matters, and your anonymity is guaranteed.</p>
+            <p>Explore our services, learn more about us, and stay updated with the latest news.</p>
+        </div>
+        <div class="rectangle">
+            <div class="news">
+                <div class="news-item">News Item 1: Community event coming up!</div>
+                <div class="news-item">News Item 2: New services launched.</div>
+                <div class="news-item">News Item 3: Join us for a workshop.</div>
+                <div class="news-item">News Item 4: Volunteer opportunities available.</div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-rectangle">
+        <img src="images/warning.jpeg" alt="Logo">
+        <p>If you or anyone is in immediate danger, call the Police toll free: 122 </p>
+    </div>
+    <footer>
+        <p>&copy; 2023 Mokhosi. All rights reserved.</p>
+    </footer>
+</body>
+</html>

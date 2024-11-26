@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: 1s-and-0s-application
+  main:
+    web-application-type: servlet
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/qele_chatbot_database
+#    username: postgres
+#    password: password
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        format_sql: 'true'
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+  ai:
+#    vectorstore:
+#      pgvector:
+#        initialize-schema: true
+    openai:
+      api-key: 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
+      chat:
+        options:
+          model: gpt-4o-mini
+
+server:
+  port: 8090
