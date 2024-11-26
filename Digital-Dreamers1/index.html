@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Dreamers</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="product-categories.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+  .hidden {
+    display: none;
+  }
+</style>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyBmGsvpmqrrZptEkOE-GgO4JpFpa5AXKuA",
+          authDomain: "edtech-cfc61.firebaseapp.com",
+          projectId: "edtech-cfc61",
+          storageBucket: "edtech-cfc61.firebasestorage.app",
+          messagingSenderId: "413128910911",
+          appId: "1:413128910911:web:1ead13f37fa53241a2f08a"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+      </script>
+</head>
+<body class="mx-auto " >
+
+
+    <!-- Navigation Bar -->
+  <!--  <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo" width="50">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#Courses">Courses</a></li>
+            <li><a href="#Login / Register">Login / Register</a></li>
+        </ul>
+    </nav>
+    -->
+    
+    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="img/logo-icon.jpg" class="h-10" alt="Flowbite Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">EDTECH</span>
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse" id="auth-section">
+                <!-- The "Get Started" button will be shown if the user is not logged in -->
+                <a href="signup.html" id="getStartedButton">
+                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Get started
+                    </button>
+                </a>
+                <!-- The profile icon and dropdown will be shown if the user is logged in -->
+                <div class="relative" id="profileMenu" style="display: none;">
+                  <a href="profile.html">
+                        <!-- SVG for profile icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+                    
+                </a>
+                     <!-- Dropdown menu -->
+      
+                </div>
+            </div>
+            <!-- Navbar links -->
+            <div class="items-center justify-between w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+                <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li><a href="index.html" class="block py-2 px-3 md:p-0 text-gray-900 dark:text-white">Home</a></li>
+                    <li><a href="course.html" class="block py-2 px-3 md:p-0 text-gray-900 dark:text-white">Courses</a></li>
+                    <li><a href="contact.html" class="block py-2 px-3 md:p-0 text-gray-900 dark:text-white">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- JavaScript for Authentication and Dropdown Toggle -->
+    <script type="module">
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+    
+        const auth = getAuth();
+    
+        // Function to toggle the dropdown visibility
+        function toggleDropdown() {
+            const dropdown = document.getElementById('profileDropdown');
+            dropdown.classList.toggle('hidden');
+        }
+    
+        // Listen for authentication state changes
+        onAuthStateChanged(auth, (user) => {
+            const getStartedButton = document.getElementById('getStartedButton');
+            const profileMenu = document.getElementById('profileMenu');
+    
+            if (user) {
+                sessionStorage.setItem('user', JSON.stringify(user)); // Save the entire user object or just needed details
+                console.log('User is signed in:', user);
+                // User is signed in; hide "Get started" and show profile icon
+                getStartedButton.style.display = 'none';
+                profileMenu.style.display = 'block';
+            } else {
+                // No user is signed in; show "Get started" and hide profile icon
+                getStartedButton.style.display = 'block';
+                profileMenu.style.display = 'none';
+            }
+        });
+    
+        // Log out function
+        function logoutUser() {
+            signOut(auth).then(() => {
+                window.location.reload();
+            }).catch((error) => {
+                console.error("Sign out error:", error);
+                alert("Error signing out. Please try again.");
+            });
+        }
+    </script>
+    
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+    
+
+
+<!-- Navbar End -->
+
+  
+  <!-- END OF NAV BAR-->
+
+   <!--HERO-->
+   <div class="w-full">
+    <div class="max-w-5xl sm:mx-auto my-24 mx-4">
+      <div
+        class="bg-gradient-to-br from-purple-700 via-purple-500 to-red-500 rounded-md rounded-br-[100px] sm:rounded-br-[250px] w-full shadow-md flex flex-wrap flex-col-reverse md:flex-row p-6 sm:p-8">
+        <div class="w-full sm:w-2/3 text-center sm:text-left">
+            <h1 class="text-3xl sm:text-5xl font-bold text-gray-100 sm:leading-relaxed mt-8">Empowering Lesotho's Youth for a Brighter Future</h1>
+            <p class="text-gray-300 text-sm sm:text-base py-4 sm:pr-5">Gain the skills and knowledge to shape your future and make an impact in your community. Join us on a journey of learning, growth, and empowerment tailored for the youth of Lesotho.</p>
+           <a href="signup.html"> <button class="px-6 py-3 bg-blue-500 text-gray-200 mt-4 mb-8 text-base font-medium rounded-md shadow-md hover:bg-blue-600 hover:text-gray-50">Join the Movement</button>
+           </a>  
+        </div>
+          
+        <div class="w-full md:w-1/3">
+          <img
+            src="https://ouch-cdn2.icons8.com/d_BClx1S3fv815mLTRYo5bg7W-1lCtsneENg5ZNN6NM/rs:fit:256:256/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvNDMy/L2MyYTJkZDhiLTg2/N2UtNGJlNi1iOTZj/LWU1ZmRhZmQ4NWQw/ZS5wbmc.png"
+            alt="Illustration by Rosina Gavrilash from Ouch!"
+            class="mx-auto mt-4 sm:mt-14 sm:w-full transition-transform hover:scale-110 duration-300">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--HERO END-->
+   <!-- PRODUCT CATEGORIES START-->
+    <div class="course-section ml-10">
+        <p class="course-title">Course Categories</p>  
+   <div class="card-container mx-auto ">
+       
+        <div class="card">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dollar-sign"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <div class="card__title">Entreprenuership</div>
+            <p class="card__content">Explore Entreprenuership</p>
+            <div class="card__date">FREE</div>
+            <div class="card__arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
+                    <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+                </svg>
+            </div>
+        </div>
+        <!-- Repeat the card structure for the remaining cards -->
+        <div class="card">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chart-no-axes-combined"><path d="M12 16v5"/><path d="M16 14v7"/><path d="M20 10v11"/><path d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15"/><path d="M4 18v3"/><path d="M8 14v7"/></svg>
+            <h3 class="card__title">Marketing</h3>
+            <p class="card__content">Explore The Marketing </p>
+            <div class="card__date">FREE</div>
+            <div class="card__arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
+                    <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+                </svg>
+            </div>
+        </div>
+        
+        <!-- Add a total of 8 cards here -->
+        <!-- Duplicate the card structure and change the titles and dates accordingly -->
+        
+        <div class="card">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-microscope"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>
+            <h3 class="card__title">Science</h3>
+            <p class="card__content">Explore Science Courses</p>
+            <div class="card__date">FREE</div>
+            <div class="card__arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
+                    <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+                </svg>
+            </div>
+        </div>
+    
+        <div class="card">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-film"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M3 7.5h4"/><path d="M3 12h18"/><path d="M3 16.5h4"/><path d="M17 3v18"/><path d="M17 7.5h4"/><path d="M17 16.5h4"/></svg>
+            <h3 class="card__title">Videography</h3>
+            <p class="card__content">Explore The Videography course</p>
+            <div class="card__date">FREE</div>
+            <div class="card__arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
+                    <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+                </svg>
+            </div>
+        </div>
+    
+        <div class="card">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-camera"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+            <h3 class="card__title">Photography</h3>
+            <p class="card__content">Explore the Photoshoot </p>
+            <div class="card__date">FREE</div>
+            <div class="card__arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
+                    <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+                </svg>
+            </div>
+        </div>
+    
+        <div class="card">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-languages"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+            <h3 class="card__title">Languages</h3>
+            <p class="card__content">Explore the language </p>
+            <div class="card__date">FREE</div>
+            <div class="card__arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
+                    <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+                </svg>
+            </div>
+        </div>
+    
+        <div class="card">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-pen"><path d="M11.5 15H7a4 4 0 0 0-4 4v2"/><path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/><circle cx="10" cy="7" r="4"/></svg>
+            <h3 class="card__title">Personal Development</h3>
+            <p class="card__content">Explore Personal Development</p>
+            <div class="card__date">FREE</div>
+            <div class="card__arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
+                    <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+                </svg>
+            </div>
+        </div>
+    
+        <div class="card">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-terminal"><path d="m7 11 2-2-2-2"/><path d="M11 13h4"/><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/></svg>
+           <a href="course.html"> <h3 class="card__title">Coding</h3></a>
+            <p class="card__content">Explore Coding</p>
+            <div class="card__date">FREE</div>
+            <div class="card__arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
+                    <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+    
+
+
+</div>
+<!-- FEEDBACKS-->
+<div class="mx-auto text-center mt-10 md:max-w-xl lg:max-w-3xl">
+    <h3 class="mb-6 text-3xl font-bold">Testimonials</h3>
+    <p
+      class="mb-6 pb-2 text-neutral-600 dark:text-neutral-300 md:mb-12 md:pb-0">
+      Hear what others say about us :)
+    </p>
+  </div>
+  
+  <div class="grid gap-6 text-center md:grid-cols-3 lg:gap-12">
+    <div class="mb-12 md:mb-0">
+      <div class="mb-6 flex justify-center">
+        <img
+          src="https://tecdn.b-cdn.net/img/Photos/Avatars/img%20(1).jpg"
+          class="w-32 rounded-full shadow-lg dark:shadow-black/30" />
+      </div>
+      <h5 class="mb-4 text-xl font-semibold">Maria Smantha</h5>
+      <h6 class="mb-4 font-semibold text-primary dark:text-primary-400">
+        Web Developer
+      </h6>
+      <p class="mb-4 text-neutral-600 dark:text-neutral-300">
+        <span class="inline-block pe-2 [&>svg]:w-5"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 448 512">
+            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <path
+              d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V320 288 216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H320c-35.3 0-64-28.7-64-64V320 288 216z" />
+          </svg>
+        </span>
+        Thank you for a great course.
+      <ul class="mb-0 flex items-center justify-center">
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="h-5 w-5 text-yellow-500">
+            <path
+              fill-rule="evenodd"
+              d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+              clip-rule="evenodd" />
+          </svg>
+        </li>
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="h-5 w-5 text-yellow-500">
+            <path
+              fill-rule="evenodd"
+              d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+              clip-rule="evenodd" />
+          </svg>
+        </li>
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="h-5 w-5 text-yellow-500">
+            <path
+              fill-rule="evenodd"
+              d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+              clip-rule="evenodd" />
+          </svg>
+        </li>
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="h-5 w-5 text-yellow-500">
+            <path
+              fill-rule="evenodd"
+              d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+              clip-rule="evenodd" />
+          </svg>
+        </li>
+        <li>
+          <svg
+            clip-rule="evenodd"
+            fill-rule="evenodd"
+            fill="currentColor"
+            class="h-5 w-5 text-yellow-500"
+            stroke-linejoin="round"
+            stroke-miterlimit="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="m11.322 2.923c.126-.259.39-.423.678-.423.289 0 .552.164.678.423.974 1.998 2.65 5.44 2.65 5.44s3.811.524 6.022.829c.403.055.65.396.65.747 0 .19-.072.383-.231.536-1.61 1.538-4.382 4.191-4.382 4.191s.677 3.767 1.069 5.952c.083.462-.275.882-.742.882-.122 0-.244-.029-.355-.089-1.968-1.048-5.359-2.851-5.359-2.851s-3.391 1.803-5.359 2.851c-.111.06-.234.089-.356.089-.465 0-.825-.421-.741-.882.393-2.185 1.07-5.952 1.07-5.952s-2.773-2.653-4.382-4.191c-.16-.153-.232-.346-.232-.535 0-.352.249-.694.651-.748 2.211-.305 6.021-.829 6.021-.829s1.677-3.442 2.65-5.44zm.678 2.033v11.904l4.707 2.505-.951-5.236 3.851-3.662-5.314-.756z"
+              fill-rule="nonzero" />
+          </svg>
+        </li>
+      </ul>
+    </div>
+    <div class="mb-12 md:mb-0">
+      <div class="mb-6 flex justify-center">
+        <img
+          src="https://tecdn.b-cdn.net/img/Photos/Avatars/img%20(2).jpg"
+          class="w-32 rounded-full shadow-lg dark:shadow-black/30" />
+      </div>
+      <h5 class="mb-4 text-xl font-semibold">Lisa Cudrow</h5>
+      <h6 class="mb-4 font-semibold text-primary dark:text-primary-400">
+        Graphic Designer
+      </h6>
+      <p class="mb-4 text-neutral-600 dark:text-neutral-300">
+        <span class="inline-block pe-2 [&>svg]:w-5"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 448 512">
+            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <path
+              d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V320 288 216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H320c-35.3 0-64-28.7-64-64V320 288 216z" />
+          </svg>
+        </span>
+        This has more than met my expectations
+      </p>
+      <ul class="mb-0 flex items-center justify-center">
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="h-5 w-5 text-yellow-500">
+            <path
+              fill-rule="evenodd"
+              d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+              clip-rule="evenodd" />
+          </svg>
+        </li>
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="h-5 w-5 text-yellow-500">
+            <path
+              fill-rule="evenodd"
+              d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+              clip-rule="evenodd" />
+          </svg>
+        </li>
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="h-5 w-5 text-yellow-500">
+            <path
+              fill-rule="evenodd"
+              d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+              clip-rule="evenodd" />
+          </svg>
+        </li>
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="h-5 w-5 text-yellow-500">
+            <path
+              fill-rule="evenodd"
+              d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+              clip-rule="evenodd" />
+          </svg>
+        </li>
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="h-5 w-5 text-yellow-500">
+            <path
+              fill-rule="evenodd"
+              d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+              clip-rule="evenodd" />
+          </svg>
+        </li>
+      </ul>
+    </div>
+    <div class="mb-0">
+      <div class="mb-6 flex justify-center">
+        <img
+          src="https://tecdn.b-cdn.net/img/Photos/Avatars/img%20(9).jpg"
+          class="w-32 rounded-full shadow-lg dark:shadow-black/30" />
+      </div>
+      <h5 class="mb-4 text-xl font-semibold">John Smith</h5>
+      <h6 class="mb-4 font-semibold text-primary dark:text-primary-400">
+        Marketing Specialist
+      </h6>
+      <p class="mb-4 text-neutral-600 dark:text-neutral-300">
+        <span class="inline-block pe-2 [&>svg]:w-5"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 448 512">
+            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <path
+              d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V320 288 216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H320c-35.3 0-64-28.7-64-64V320 288 216z" />
+          </svg>
+        </span>
+        Very good!
+      </p>
+      <ul class="mb-0 flex items-center justify-center">
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="h-5 w-5 text-yellow-500">
+            <path
+              fill-rule="evenodd"
+              d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+              clip-rule="evenodd" />
+          </svg>
+        </li>
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="h-5 w-5 text-yellow-500">
+            <path
+              fill-rule="evenodd"
+              d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+              clip-rule="evenodd" />
+          </svg>
+        </li>
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="h-5 w-5 text-yellow-500">
+            <path
+              fill-rule="evenodd"
+              d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+              clip-rule="evenodd" />
+          </svg>
+        </li>
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="h-5 w-5 text-yellow-500">
+            <path
+              fill-rule="evenodd"
+              d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+              clip-rule="evenodd" />
+          </svg>
+        </li>
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            class="h-5 w-5 text-yellow-500"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-6 w-6">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+          </svg>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+<!-- ====== Footer Section Start -->
+<footer class="relative z-10 bg-white dark:bg-dark pt-20 ml-10 pb-5 lg:pt-[120px] lg:pb-10">
+    <div class="container mx-auto">
+       <div class="flex flex-wrap mx-8 gap-12">
+          <div class="w-full px-4 sm:w-2/3 lg:w-3/12">
+             <div class="w-full mb-10">
+                <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="img/logo-icon.jpg" class="h-10 " alt="Flowbite Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">EDTECH</span>
+                </a>
+                <p class="text-base text-body-color dark:text-dark-6 mb-7">
+                   Empowering learners worldwide with access to top-quality education from the best instructors.
+                </p>
+                <p class="flex items-center text-sm font-medium text-dark dark:text-white">
+                   <span class="mr-3 text-primary">
+                      <svg
+                         width="20"
+                         height="20"
+                         viewBox="0 0 20 20"
+                         fill="none"
+                         xmlns="http://www.w3.org/2000/svg"
+                      >
+                         <!-- SVG Content for Contact Icon -->
+                      </svg>
+                   </span>
+                 
+                </p>
+             </div>
+          </div>
+          
+          <!-- Courses Section -->
+          <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
+             <div class="w-full mb-10">
+                <h4 class="text-lg font-semibold text-dark dark:text-white mb-9">
+                   Courses
+                </h4>
+                <ul class="space-y-3">
+                   <li><a href="javascript:void(0)" class="text-base leading-loose text-body-color hover:text-primary dark:text-dark-6">Web Development</a></li>
+                   <li><a href="javascript:void(0)" class="text-base leading-loose text-body-color hover:text-primary dark:text-dark-6">Data Science</a></li>
+                   <li><a href="javascript:void(0)" class="text-base leading-loose text-body-color hover:text-primary dark:text-dark-6">Business Management</a></li>
+                   <li><a href="javascript:void(0)" class="text-base leading-loose text-body-color hover:text-primary dark:text-dark-6">Design</a></li>
+                </ul>
+             </div>
+          </div>
+ 
+          <!-- About Section -->
+          <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
+             <div class="w-full mb-10">
+                <h4 class="text-lg font-semibold text-dark dark:text-white mb-9">
+                   About Us
+                </h4>
+                <ul class="space-y-3">
+                   <li><a href="javascript:void(0)" class="text-base leading-loose text-body-color hover:text-primary dark:text-dark-6">Our Story</a></li>
+                   <li><a href="javascript:void(0)" class="text-base leading-loose text-body-color hover:text-primary dark:text-dark-6">Instructors</a></li>
+                   <li><a href="javascript:void(0)" class="text-base leading-loose text-body-color hover:text-primary dark:text-dark-6">Student Stories</a></li>
+                   <li><a href="javascript:void(0)" class="text-base leading-loose text-body-color hover:text-primary dark:text-dark-6">Careers</a></li>
+                </ul>
+             </div>
+          </div>
+ 
+          <!-- Support Section -->
+          <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
+             <div class="w-full mb-10">
+                <h4 class="text-lg font-semibold text-dark dark:text-white mb-9">
+                   Support
+                </h4>
+                <ul class="space-y-3">
+                   <li><a href="javascript:void(0)" class="text-base leading-loose text-body-color hover:text-primary dark:text-dark-6">Help Center</a></li>
+                   <li><a href="javascript:void(0)" class="text-base leading-loose text-body-color hover:text-primary dark:text-dark-6">FAQs</a></li>
+                   <li><a href="javascript:void(0)" class="text-base leading-loose text-body-color hover:text-primary dark:text-dark-6">Account & Billing</a></li>
+                   <li><a href="javascript:void(0)" class="text-base leading-loose text-body-color hover:text-primary dark:text-dark-6">Technical Support</a></li>
+                </ul>
+             </div>
+          </div>
+ 
+         
+       </div>
+       <div class="pt-8 mt-8 border-t border-gray-200 dark:border-dark-5 text-center">
+          <p class="text-sm text-body-color dark:text-dark-6">&copy; 2024 EdTech. All rights reserved.</p>
+       </div>
+    </div>
+ </footer>
+ 
+<!-- ====== Footer Section End -->
+
+</body>
+</html>

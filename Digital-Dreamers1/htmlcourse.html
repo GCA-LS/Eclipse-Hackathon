@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="google-translate-customization" content="9f841e7780177523-3214ceb76f765f38-gc38c6fe6f9d06436-c">
+    </meta>
+
+    <title> HTML Course</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/icon.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+  <!-- Include Firebase SDK using module script -->
+
+  
+</head>
+ 
+
+<body>
+  
+
+
+    <!-- Navbar Start -->
+    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="img/logo-icon.jpg" class="h-10" alt="Flowbite Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">EDTECH</span>
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse" id="auth-section">
+                <!-- The "Get Started" button will be shown if the user is not logged in -->
+                <a href="signup.html" id="getStartedButton">
+                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Get started
+                    </button>
+                </a>
+                <!-- The profile icon and dropdown will be shown if the user is logged in -->
+                <div class="relative" id="profileMenu" style="display: none;">
+                  <a href="profile.html">
+                        <!-- SVG for profile icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+                    
+                </a>
+                     <!-- Dropdown menu -->
+      
+                </div>
+            </div>
+            <!-- Navbar links -->
+            <div class="items-center justify-between w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+                <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li><a href="index.html" class="block py-2 px-3 md:p-0 text-gray-900 dark:text-white">Home</a></li>
+                    <li><a href="course.html" class="block py-2 px-3 md:p-0 text-gray-900 dark:text-white">Courses</a></li>
+                    <li><a href="contact.html" class="block py-2 px-3 md:p-0 text-gray-900 dark:text-white">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- JavaScript for Authentication and Dropdown Toggle -->
+ 
+    
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+    
+
+
+    <!-- Navbar End -->
+
+    
+<!-- Course Detail Start -->
+<div class="container-xxl py-10 bg-gray-50">
+    <div class="container mx-auto">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Course Details -->
+            <div class="lg:w-3/4 p-6 bg-white rounded-lg shadow-lg">
+                <div class="space-y-5">
+                    <h2 class="text-3xl font-bold text-gray-800">HTML Course for Beginners</h2>
+                    <p class="text-gray-600">Start at the beginning by learning HTML basics — an important foundation for building and editing web pages.</p>
+                    <div class="flex items-center space-x-6 text-gray-500">
+                        <small><i class="fa fa-star text-yellow-500"></i> 4</small>
+                        <small><i class="fa fa-user-graduate"></i> 5+ Learners</small>
+                        <small><i class="fa fa-user"></i> Beginner</small>
+                        <small><i class="fa fa-clock"></i> 2.0 Hrs</small>
+                    </div>
+                </div>
+
+                <!-- Tabs -->
+                <div class="mt-8">
+                    <h3 class="text-2xl font-semibold text-gray-800">About this Course</h3>
+                    <p class="text-gray-600 mt-4">Fun fact: all websites use HTML — even this one. It's a fundamental part of every web developer's toolkit. HTML provides the content that gives web pages structure, by using elements and tags, you can add text, images, videos, forms, and more. Learning HTML basics is an important first step in your web development journey and an essential skill for front- and back-end developers.</p>
+                    <h3 class="mt-6 text-xl font-semibold text-gray-800">Skills you'll gain</h3>
+                    <div class="flex flex-wrap mt-3">
+                        <span class="badge bg-blue-500 text-white px-4 py-2 m-1 rounded-full text-sm">Structure pages with HTML</span>
+                        <span class="badge bg-blue-500 text-white px-4 py-2 m-1 rounded-full text-sm">Present data with tables</span>
+                        <span class="badge bg-blue-500 text-white px-4 py-2 m-1 rounded-full text-sm">Write cleaner HTML</span>
+                    </div>
+
+                    <!-- Syllabus Accordion -->
+                    <h3 class="mt-10 text-2xl font-semibold text-gray-800">Syllabus</h3>
+                    <div class="mt-4 border-t border-gray-200 divide-y divide-gray-200">
+                        <div class="py-4">
+                            <button class="w-full text-left flex items-center justify-between font-semibold text-gray-800 hover:text-blue-600" onclick="toggleAccordion('accordion-1')">
+                                Elements and Structure
+                                <i class="fa fa-chevron-down"></i>
+                            </button>
+                            <div id="accordion-1" class="hidden mt-2 text-gray-600">
+                                <ul class="pl-6 space-y-2">
+                                    <li><i class="fa fa-video text-red-500"></i> Introduction to HTML</li>
+                                    <li><i class="fa fa-video text-red-500"></i> HTML Document Standards</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="py-4">
+                            <button class="w-full text-left flex items-center justify-between font-semibold text-gray-800 hover:text-blue-600" onclick="toggleAccordion('accordion-2')">
+                                Tables
+                                <i class="fa fa-chevron-down"></i>
+                            </button>
+                            <div id="accordion-2" class="hidden mt-2 text-gray-600">
+                                <ul class="pl-6 space-y-2">
+                                    <li><i class="fa fa-video text-red-500"></i> HTML Tables</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="py-4">
+                            <button class="w-full text-left flex items-center justify-between font-semibold text-gray-800 hover:text-blue-600" onclick="toggleAccordion('accordion-3')">
+                                Forms
+                                <i class="fa fa-chevron-down"></i>
+                            </button>
+                            <div id="accordion-3" class="hidden mt-2 text-gray-600">
+                                <ul class="pl-6 space-y-2">
+                                    <li><i class="fa fa-video text-red-500"></i> HTML Forms</li>
+                                    <li><i class="fa fa-video text-red-500"></i> Form Validation</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="py-4">
+                            <button class="w-full text-left flex items-center justify-between font-semibold text-gray-800 hover:text-blue-600" onclick="toggleAccordion('accordion-4')">
+                                Semantic HTML
+                                <i class="fa fa-chevron-down"></i>
+                            </button>
+                            <div id="accordion-4" class="hidden mt-2 text-gray-600">
+                                <ul class="pl-6 space-y-2">
+                                    <li><i class="fa fa-video text-red-500"></i> Semantic HTML</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+</div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:w-1/4 p-6 bg-white rounded-lg shadow-lg">
+                <img src="img/course-1.jpg" alt="Course Image" class="h-48 w-full object-cover rounded-md">
+                <h4 class="mt-4 text-xl font-semibold text-gray-800">FREE</h4>
+              
+                <button id="enrollButton" onclick="enroll()" class="block w-full text-center text-white bg-blue-600 rounded-md py-3 mt-6 font-semibold">ENROLL NOW</button>
+                <div class="mt-8">
+                    <div class="flex justify-between py-2 border-t text-gray-700">
+                        <p><i class="fa fa-clock"></i> Duration</p>
+                        <p>2.0 Hrs</p>
+                    </div>
+                    <div class="flex justify-between py-2 border-t text-gray-700">
+                        <p><i class="fa fa-book"></i> Lectures</p>
+                        <p>4</p>
+                    </div>
+                    <div class="flex justify-between py-2 border-t text-gray-700">
+                        <p><i class="fa fa-bolt"></i> Enrolled</p>
+                        <p>240 students</p>
+                    </div>
+                    <div class="flex justify-between py-2 border-t text-gray-700">
+                        <p><i class="fa fa-language"></i> Language</p>
+                        <p>English</p>
+                    </div>
+                    <div class="flex justify-between py-2 border-t text-gray-700">
+                        <p><i class="fa fa-list"></i> Skill Level</p>
+                        <p>Beginner</p>
+                    </div>
+                    <div class="flex justify-between py-2 border-t text-gray-700">
+                        <p><i class="fa fa-infinity"></i> Deadline</p>
+                        <p>Lifetime</p>
+                    </div>
+                    <div class="flex justify-between py-2 border-t border-b text-gray-700">
+                        <p><i class="fa fa-certificate"></i> Certificate</p>
+                        <p>Yes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Course Detail End -->
+
+
+
+  <!-- Footer Start -->
+  <footer class="relative z-10 bg-white dark:bg-dark pt-20 ml-10 pb-5 lg:pt-[120px] lg:pb-10">
+    <div class="container mx-auto">
+       <div class="flex flex-wrap mx-8 gap-12">
+          <div class="w-full px-4 sm:w-2/3 lg:w-3/12">
+             <div class="w-full mb-10">
+                <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="img/logo-icon.jpg" class="h-10 " alt="Flowbite Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">EDTECH</span>
+                </a>
+                <p class="text-base text-body-color dark:text-dark-6 mb-7">
+                   Empowering learners worldwide with access to top-quality education from the best instructors.
+                </p>
+                <p class="flex items-center text-sm font-medium text-dark dark:text-white">
+                   <span class="mr-3 text-primary">
+                      <svg
+                         width="20"
+                         height="20"
+                         viewBox="0 0 20 20"
+                         fill="none"
+                         xmlns="http://www.w3.org/2000/svg"
+                      >
+                         <!-- SVG Content for Contact Icon -->
+                      </svg>
+                   </span>
+                 
+                </p>
+             </div>
+          </div>
+          
+          <!-- Courses Section -->
+          <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
+             <div class="w-full mb-10">
+                <h4 class="text-lg font-semibold text-dark dark:text-white mb-9">
+                   Courses
+                </h4>
+                <ul class="space-y-3">
+                   <li><a href="javascript:void(0)" class="text-base leading-loose text-body-color hover:text-primary dark:text-dark-6">Web Development</a></li>
+                   <li><a href="javascript:void(0)" class="text-base leading-loose text-body-color hover:text-primary dark:text-dark-6">Data Science</a></li>
+                   <li><a href="javascript:void(0)" class="text-base leading-loose text-body-color hover:text-primary dark:text-dark-6">Business Management</a></li>
+                   <li><a href="javascript:void(0)" class="text-base leading-loose text-body-color hover:text-primary dark:text-dark-6">Design</a></li>
+                </ul>
+             </div>
+          </div>
+ 
+          <!-- About Section -->
+          <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
+             <div class="w-full mb-10">
+                <h4 class="text-lg font-semibold text-dark dark:text-white mb-9">
+                   About Us
+                </h4>
+                <ul class="space-y-3">
+                   <li><a href="javascript:void(0)" class="text-base leading-loose text-body-color hover:text-primary dark:text-dark-6">Our Story</a></li>
+                   <li><a href="javascript:void(0)" class="text-base leading-loose text-body-color hover:text-primary dark:text-dark-6">Instructors</a></li>
+                   <li><a href="javascript:void(0)" class="text-base leading-loose text-body-color hover:text-primary dark:text-dark-6">Student Stories</a></li>
+                   <li><a href="javascript:void(0)" class="text-base leading-loose text-body-color hover:text-primary dark:text-dark-6">Careers</a></li>
+                </ul>
+             </div>
+          </div>
+ 
+          <!-- Support Section -->
+          <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
+             <div class="w-full mb-10">
+                <h4 class="text-lg font-semibold text-dark dark:text-white mb-9">
+                   Support
+                </h4>
+                <ul class="space-y-3">
+                   <li><a href="javascript:void(0)" class="text-base leading-loose text-body-color hover:text-primary dark:text-dark-6">Help Center</a></li>
+                   <li><a href="javascript:void(0)" class="text-base leading-loose text-body-color hover:text-primary dark:text-dark-6">FAQs</a></li>
+                   <li><a href="javascript:void(0)" class="text-base leading-loose text-body-color hover:text-primary dark:text-dark-6">Account & Billing</a></li>
+                   <li><a href="javascript:void(0)" class="text-base leading-loose text-body-color hover:text-primary dark:text-dark-6">Technical Support</a></li>
+                </ul>
+             </div>
+          </div>
+ 
+         
+       </div>
+       <div class="pt-8 mt-8 border-t border-gray-200 dark:border-dark-5 text-center">
+          <p class="text-sm text-body-color dark:text-dark-6">&copy; 2024 E-Learning Platform. All rights reserved.</p>
+       </div>
+    </div>
+ </footer>
+<!-- Footer End -->
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+<script type="module">
+    // Import required Firebase modules
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js';
+    import { getAuth ,onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js';
+    import { getFirestore, doc, setDoc, collection } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js';
+  
+    // Firebase configuration (replace with your actual Firebase config)
+    const firebaseConfig = {
+          apiKey: "AIzaSyBmGsvpmqrrZptEkOE-GgO4JpFpa5AXKuA",
+          authDomain: "edtech-cfc61.firebaseapp.com",
+          projectId: "edtech-cfc61",
+          storageBucket: "edtech-cfc61.firebasestorage.app",
+          messagingSenderId: "413128910911",
+          appId: "1:413128910911:web:1ead13f37fa53241a2f08a"
+        };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app); // Firebase authentication
+    const db = getFirestore(app); // Firestore
+  
+    // Enroll button click handler
+    window.enroll = async function() {
+        console.log("clicked");
+      const user = auth.currentUser; // Get the current user
+  
+      if (!user) {
+        // If no user is signed in, redirect to signup page
+        alert('You must sign in first');
+        window.location.href = 'signup.html'; // Redirect to signup page
+        return;
+      }
+  
+      // Example course info (replace with dynamic values)
+      const courseInfo = {
+        courseName: 'Html Beginners', // Replace with dynamic course name
+        courseId: '12345', // Replace with dynamic course ID
+        progress: 0, // Initial progress value
+        userEmail: user.email // Store the user's email
+      };
+  
+      try {
+        // Save course info to Firestore under 'enrolledCourses' collection
+        await setDoc(doc(collection(db, 'enrolledCourses'), `${user.uid}_${courseInfo.courseId}`), courseInfo);
+  
+        // Alert user of successful enrollment
+        alert('You have successfully enrolled in the course!');
+        window.location.href = "html-course-modules.html";
+      } catch (error) {
+        console.error('Error enrolling in course: ', error);
+        alert('There was an error enrolling in the course. Please try again.');
+      }
+    }
+
+    function toggleDropdown() {
+            const dropdown = document.getElementById('profileDropdown');
+            dropdown.classList.toggle('hidden');
+        }
+    
+        // Listen for authentication state changes
+        onAuthStateChanged(auth, (user) => {
+            const getStartedButton = document.getElementById('getStartedButton');
+            const profileMenu = document.getElementById('profileMenu');
+    
+            if (user) {
+                sessionStorage.setItem('user', JSON.stringify(user)); // Save the entire user object or just needed details
+                console.log('User is signed in:', user);
+                // User is signed in; hide "Get started" and show profile icon
+                getStartedButton.style.display = 'none';
+                profileMenu.style.display = 'block';
+            } else {
+                // No user is signed in; show "Get started" and hide profile icon
+                getStartedButton.style.display = 'block';
+                profileMenu.style.display = 'none';
+            }
+        });
+    
+        // Log out function
+        function logoutUser() {
+            signOut(auth).then(() => {
+                window.location.reload();
+            }).catch((error) => {
+                console.error("Sign out error:", error);
+                alert("Error signing out. Please try again.");
+            });
+        }
+  </script>
+</body>
+
+</html>
