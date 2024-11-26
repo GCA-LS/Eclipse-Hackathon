@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="stylesPaCo.css">
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-image">
+            <img src="profile-pic.jpg" alt="Profile Picture">
+        </div>
+        <div class="profile-info">
+            <form id="profile-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="John Doe">
+
+                <label for="profession">Profession:</label>
+                <input type="text" id="profession" name="profession" value="Web Developer">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="johndoe@example.com">
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" value="+123-456-7890">
+
+                <label for="bio">Bio:</label>
+                <textarea id="bio" name="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</textarea>
+
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+        <div class="social-media">
+            <a href="https://www.facebook.com/johndoe"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.twitter.com/johndoe"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/johndoe"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 PaCo</p>
+    </footer>
+
+    <script src="profileform.js"></script>
+</body>
+</html>

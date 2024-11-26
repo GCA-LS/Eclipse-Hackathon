@@ -1,0 +1,397 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fffff0; /* Mustard Yellow */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  background-image: url('back.png');
+  background-size: cover;
+  animation: background-pulse 3s infinite alternate;
+}
+
+header{
+     background-color: black;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    font-size: 20px;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav li a{
+    text-decoration: none;
+    color: white;
+}
+
+.search{
+	position: relative;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input [type="text"] {
+	flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-right: none;
+}
+   
+.search-bar button {
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    } 
+/* 
+.banner{
+background-image: url('banner.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 0; 
+  height: 60vh;
+  top: 100px;
+}
+.banner img {
+  margin-top: -100px; 
+}
+*/
+h2{
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	top: 50%;
+}
+
+
+.other-nav {
+    text-align: center;
+    margin: 80px 0;
+    white-space: nowrap; /*so that they appear on the same line*/
+}
+
+.other-nav p{
+	color: black;
+}
+
+.other-nav li{
+	display: inline-block;
+    width: 40%;
+    margin: 20px 5%;
+    z-index: 1;
+}
+
+.other-nav li img{
+    max-width: 25%;
+}
+
+.about-us p{
+	text-align: center;
+}
+
+/*signup styling*/
+
+.container {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #f0e68c;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: #f0e68c;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.container button {
+    background-color: #f0e68c;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*Myprofile styling
+
+
+
+.profile-container {
+    text-align: center;
+    margin: 50px auto;
+}
+
+.profile-image img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+.profile-info {
+    margin-top: 20px;
+}
+
+.social-media a {
+    margin: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.social-media i {
+    font-size: 24px;
+}
+
+/* Responsive Design 
+@media (max-width: 768px) {
+    .profile-container {
+        margin: 20px;
+    }
+    .profile-image img {
+        width: 150px;
+        height: 150px;
+    }
+    .profile-info p {
+        font-size: 14px;
+    }
+}
+*/
+
+/*categories styling*/
+
+.category-container {
+    text-align: center;
+    margin: 50px auto;
+}
+
+.category-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.category-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.category-container li {
+    margin-bottom: 10px;
+}
+
+.category-container a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    display: inline-block;
+}
+
+.category-container a:hover {
+    background-color: #ddd;
+}
+
+.category-container a {
+    /* ... existing styles ... */
+    transition: transform 0.3s ease-in-out;
+}
+
+.category-container a:hover {
+    transform: scale(1.1);
+}
+
+/*events styling*/
+
+.event-container {
+    text-align: center;
+    margin: 50px auto;
+}
+
+.event-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.event {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.event h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.event p {
+    margin-bottom: 5px;
+}
+
+.event-button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/*FAQs styling*/
+.faq-container {
+    text-align: center;
+    margin: 50px auto;
+}
+
+.faq-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.faq {
+    border-bottom: 1px solid #ccc;
+    padding: 20px;
+}
+
+.faq h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* contentcreation styling */
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+header nav a {
+    color: #f0e68c;
+    text-decoration: none;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero button {
+    background-color: #333;
+    color: #f0e68c;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.courses {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.course-card {
+    display: inline-block;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    color: #f0e68c;
+    position: relative;
+    bottom: 0;
+}
+
+.animate-button {
+    /* ... button styles ... */
+    transition: transform 0.3s ease-in-out;
+}
+
+.animate-button:hover {
+    transform: scale(1.1);
+}
+
+/*activities*/
+.activity-section h2{
+	text-align: left;
+}
+.activity-section h2{
+	text-align: left;
+}
+
+/*progress*/
+
+/*completed*/
+
+
+.completed-courses {
+    margin: 20px;
+}
+
+.completed-courses ul {
+    list-style: none;
+    padding: 0;
+}
+
+.completed-courses li {
+    margin-bottom: 20px;
+}
+
+.completed-courses a {
+    color: #333;
+    text-decoration: none;
+}
