@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tse Nyane</title>
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Heroicons CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@heroicons/vue"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+</head>
+
+<style>
+    /* Custom styles */
+    body {
+        padding-top: 64px;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 20;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 500px;
+    }
+</style>
+
+<body class="bg-gray-100">
+
+    <!-- Header Section -->
+    <header class="bg-white text-blue-600 py-4 fixed w-full top-0 z-10 shadow-md">
+        <nav class="max-w-6xl mx-auto flex justify-between items-center px-4">
+            <a href="index.html" class="flex items-center">
+                <img src="logo.png" alt="Tse Nyane Logo" class="h-10 w-auto"> <!-- Adjust the height as needed -->
+            </a>
+            <ul class="flex space-x-6">
+                <li><a href="programs.html" class="hover:underline">Programs</a></li>
+                <li><a href="institutions.html" class="hover:underline">Institutions</a></li>
+                <li><a href="opportunities.html" class="hover:underline">Opportunities</a></li>
+                <li><a href="resources.html" class="hover:underline">Resources</a></li>
+                <li><a href="High School Grad.html" class="hover:underline">High School Grad</a></li>
+                <li><a href="about.html" class="hover:underline">About</a></li> 
+            </ul>
+
+            <button class="text-blue-600 hover:bg-blue-100 p-2 rounded-full" id="loginIcon">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 48 48">
+                    <path fill="currentColor"
+                        d="M24 4A10 10 0 1024 24 10 10 0 1024 4zM36.021 28H11.979C9.785 28 8 29.785 8 31.979V33.5c0 3.312 1.885 6.176 5.307 8.063C16.154 43.135 19.952 44 24 44c7.706 0 16-3.286 16-10.5v-1.521C40 29.785 38.215 28 36.021 28z"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+    <!-- Main Content Section -->
+    <main class="max-w-6xl mx-auto py-20 px-4 mt-5 flex-grow">
+        
+        <!-- Hero Section -->
+        <section class="relative text-center mb-4 bg-cover bg-center h-[300px]" style="background-image: url('molap.jpg');">
+            <div class="relative z-10 text-white px-4 py-12">
+                <h1 class="text-4xl font-bold mb-4">Empowering Lesotho's Youth</h1>
+                <p class="text-lg mb-6">Discover educational opportunities and career paths tailored just for you.</p>
+                <button class="bg-blue-600 text-white py-3 px-8 rounded-full text-xl hover:bg-blue-700">Get Started</button>
+            </div>
+        </section>
+        <div class="max-w-6xl mx-auto font-[sans-serif]">
+            <h2 class="text-gray-800 sm:text-4xl text-2xl font-extrabold text-center mb-16">Discover Our Exclusive Features</h2>
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-12">
+          
+              <!-- Existing Features Section -->
+              <div class="text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#007bff" class="w-8 mb-6 inline-block" viewBox="0 0 32 32">
+                  <path d="M28.068 12h-.128a.934.934 0 0 1-.864-.6.924.924 0 0 1 .2-1.01l.091-.091a2.938 2.938 0 0 0 0-4.147l-1.511-1.51a2.935 2.935 0 0 0-4.146 0l-.091.091A.956.956 0 0 1 20 4.061v-.129A2.935 2.935 0 0 0 17.068 1h-2.136A2.935 2.935 0 0 0 12 3.932v.129a.956.956 0 0 1-1.614.668l-.086-.091a2.935 2.935 0 0 0-4.146 0l-1.516 1.51a2.938 2.938 0 0 0 0 4.147l.091.091a.935.935 0 0 1 .185 1.035.924.924 0 0 1-.854.579h-.128A2.935 2.935 0 0 0 1 14.932v2.136A2.935 2.935 0 0 0 3.932 20h.128a.934.934 0 0 1 .864.6.924.924 0 0 1-.2 1.01l-.091.091a2.938 2.938 0 0 0 0 4.147l1.51 1.509a2.934 2.934 0 0 0 4.147 0l.091-.091a.936.936 0 0 1 1.035-.185.922.922 0 0 1 .579.853v.129A2.935 2.935 0 0 0 14.932 31h2.136A2.935 2.935 0 0 0 20 28.068v-.129a.956.956 0 0 1 1.614-.668l.091.091a2.935 2.935 0 0 0 4.146 0l1.511-1.509a2.938 2.938 0 0 0 0-4.147l-.091-.091a.935.935 0 0 1-.185-1.035.924.924 0 0 1 .854-.58h.128A2.935 2.935 0 0 0 31 17.068v-2.136A2.935 2.935 0 0 0 28.068 12ZM29 17.068a.933.933 0 0 1-.932.932h-.128a2.956 2.956 0 0 0-2.083 5.028l.09.091a.934.934 0 0 1 0 1.319l-1.511 1.509a.932.932 0 0 1-1.318 0l-.09-.091A2.957 2.957 0 0 0 18 27.939v.129a.933.933 0 0 1-.932.932h-2.136a.933.933 0 0 1-.932-.932v-.129a2.951 2.951 0 0 0-5.028-2.082l-.091.091a.934.934 0 0 1-1.318 0l-1.51-1.509a.934.934 0 0 1 0-1.319l.091-.091A2.956 2.956 0 0 0 4.06 18h-.128A.933.933 0 0 1 3 17.068v-2.136A.933.933 0 0 1 3.932 14h.128a2.956 2.956 0 0 0 2.083-5.028l-.09-.091a.933.933 0 0 1 0-1.318l1.51-1.511a.932.932 0 0 1 1.318 0l.09.091A2.957 2.957 0 0 0 14 4.061v-.129A.933.933 0 0 1 14.932 3h2.136a.933.933 0 0 1 .932.932v.129a2.956 2.956 0 0 0 5.028 2.082l.091-.091a.932.932 0 0 1 1.318 0l1.51 1.511a.933.933 0 0 1 0 1.318l-.091.091A2.956 2.956 0 0 0 27.94 14h.128a.933.933 0 0 1 .932.932Z" data-original="#000000" />
+                  <path d="M16 9a7 7 0 1 0 7 7 7.008 7.008 0 0 0-7-7Zm0 12a5 5 0 1 1 5-5 5.006 5.006 0 0 1-5 5Z" data-original="#000000" />
+                </svg>
+                <h3 class="text-gray-800 text-xl font-semibold mb-3">Customization</h3>
+                <p class="text-gray-600 text-sm">Tailor our product to suit your needs Tailor our product to suit your needs.</p>
+              </div>
+        
+              <!-- Recommended Programs -->
+              <div class="text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#007bff" class="w-8 mb-6 inline-block" viewBox="0 0 512 512">
+                  <path d="M407 0H105C47.21 0 0 47.21 0 105v302c0 57.79 47.21 105 105 105h302c57.79 0 105-47.21 105-105V105c0-57.79-47.21-105-105-105zm-135 365c0 11-9 20-20 20H160c-11 0-20-9-20-20V160c0-11 9-20 20-20h87c11 0 20 9 20 20v205zm132 0c0 11-9 20-20 20H297c-11 0-20-9-20-20V160c0-11 9-20 20-20h87c11 0 20 9 20 20v205z" data-original="#000000" />
+                </svg>
+                <h3 class="text-gray-800 text-xl font-semibold mb-3">Recommended Programs</h3>
+                <p class="text-gray-600 text-sm">Explore curated programs designed for your professional growth.</p>
+              </div>
+          
+              <!-- Featured Institutions -->
+              <div class="text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#007bff" class="w-8 mb-6 inline-block" viewBox="0 0 64 64">
+                  <path d="M32 0C14.33 0 0 14.33 0 32s14.33 32 32 32 32-14.33 32-32S49.67 0 32 0zm0 60C16.56 60 4 47.44 4 32S16.56 4 32 4s28 12.56 28 28-12.56 28-28 28z" data-original="#000000" />
+                  <path d="M43 31H21c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h22c1.1 0 2-.9 2-2V33c0-1.1-.9-2-2-2zm-1 13H22V34h20v10z" data-original="#000000" />
+                </svg>
+                <h3 class="text-gray-800 text-xl font-semibold mb-3">Featured Institutions</h3>
+                <p class="text-gray-600 text-sm">Discover top-tier institutions offering cutting-edge programs and resources.</p>
+              </div>
+          
+              <!-- Latest Opportunities -->
+              <div class="text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#007bff" class="w-8 mb-6 inline-block" viewBox="0 0 24 24">
+                  <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm4 13H8v-2h8v2z" data-original="#000000" />
+                </svg>
+                <h3 class="text-gray-800 text-xl font-semibold mb-3">Latest Opportunities</h3>
+                <p class="text-gray-600 text-sm">Stay up-to-date with the latest opportunities in your field of interest.</p>
+              </div>
+          
+            </div>
+          </div>
+         <!-- CTA Section -->
+         <section class="bg-blue-600 text-white text-center py-12 mb-16 mt-12">
+            <h2 class="text-3xl font-semibold mb-4">Ready to Start Your Journey?</h2>
+            <p class="text-lg mb-6">Join thousands of other students who are empowering their futures with the right resources and opportunities.</p>
+            <button class="bg-white text-blue-600 py-3 px-8 rounded-full text-xl hover:bg-gray-200">Sign Up Now</button>
+        </section>
+
+        <!-- Testimonials Section -->
+<div class="my-6 font-[sans-serif]">
+    <!-- Section Title and Description -->
+    <div class="text-center max-w-3xl mx-auto">
+        <h2 class="text-3xl font-extrabold text-gray-800">Testimonials</h2>
+        <p class="text-sm text-gray-800 mt-4 leading-relaxed">What our users say</p>
+    </div>
+
+    <!-- Testimonials Grid -->
+    <div class="grid md:grid-cols-3 gap-6 max-w-6xl max-md:gap-16 max-md:max-w-lg mx-auto mt-20">
+        <!-- Testimonial 1 -->
+        <div class="w-full p-6 rounded-lg mx-auto shadow-[0_4px_14px_-6px_rgba(93,96,127,0.4)] bg-white relative">
+            <img src="morobi.jpg" class="w-14 h-14 rounded-full absolute right-0 left-0 mx-auto -top-7" />
+            <div class="mt-6 text-center">
+                <p class="text-sm text-gray-800 leading-relaxed">"Tse Nyane helped me discover a scholarship that changed my life. its a great resource for all students"</p>
+            </div>
+
+            <div class="flex justify-center space-x-1 mt-6">
+                <svg class="w-4 fill-[#facc15]" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                </svg>
+                <svg class="w-4 fill-[#facc15]" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                </svg>
+                <svg class="w-4 fill-[#facc15]" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                </svg>
+                <svg class="w-4 fill-[#facc15]" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                </svg>
+                <svg class="w-4 fill-[#CED5D8]" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                </svg>
+            </div>
+
+            <div class="mt-6 text-center">
+                <h4 class="text-sm whitespace-nowrap font-bold">Morobi Relebohile</h4>
+            </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="w-full p-6 rounded-lg mx-auto shadow-[0_4px_14px_-6px_rgba(93,96,127,0.4)] bg-white relative">
+            <img src="molapo.jpg" class="w-14 h-14 rounded-full absolute right-0 left-0 mx-auto -top-7" />
+            <div class="mt-6 text-center">
+                <p class="text-sm text-gray-800 leading-relaxed">"The opportunities section helped me land an intership at a leading Tech Company. Highly Recommended!"</section></p>
+            </div>
+
+            <div class="flex justify-center space-x-1 mt-6">
+                <svg class="w-4 fill-[#facc15]" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                </svg>
+                <svg class="w-4 fill-[#facc15]" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                </svg>
+                <svg class="w-4 fill-[#facc15]" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                </svg>
+                <svg class="w-4 fill-[#facc15]" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                </svg>
+                <svg class="w-4 fill-[#CED5D8]" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                </svg>
+            </div>
+
+            <div class="mt-6 text-center">
+                <h4 class="text-sm whitespace-nowrap font-bold">Molapo Matoloane</h4>
+            </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="w-full p-6 rounded-lg mx-auto shadow-[0_4px_14px_-6px_rgba(93,96,127,0.4)] bg-white relative">
+            <img src="katleho.jpg" class="w-14 h-14 rounded-full absolute right-0 left-0 mx-auto -top-7" />
+            <div class="mt-6 text-center">
+                <p class="text-sm text-gray-800 leading-relaxed">"I found the perfect University program for my future career. Thank you, Tse Nyane!"</p>
+            </div>
+
+            <div class="flex justify-center space-x-1 mt-6">
+                <svg class="w-4 fill-[#facc15]" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                </svg>
+                <svg class="w-4 fill-[#facc15]" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                </svg>
+                <svg class="w-4 fill-[#facc15]" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                </svg>
+                <svg class="w-4 fill-[#facc15]" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                </svg>
+                <svg class="w-4 fill-[#CED5D8]" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                </svg>
+            </div>
+
+            <div class="mt-6 text-center">
+                <h4 class="text-sm whitespace-nowrap font-bold">Katleho Ramaili</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Stats Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-semibold mb-6 text-center">Our Impact</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-3xl font-bold mb-2">1,200+</h3>
+                    <p class="text-lg text-gray-700">Students Enrolled</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-3xl font-bold mb-2">50+</h3>
+                    <p class="text-lg text-gray-700">Featured Institutions</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-3xl font-bold mb-2">300+</h3>
+                    <p class="text-lg text-gray-700">Opportunities Available</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-blue-600 text-white py-4 text-center mt-auto">
+        <p>&copy; 2024 Tse Nyane. All rights reserved.</p>
+    </footer>
+
+    <script>
+
+        document.getElementById('loginIcon').addEventListener('click', () => {
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>

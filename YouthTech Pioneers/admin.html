@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tse Nyane Admin Panel</title>
+    <style>
+        /* Basic styling */
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; }
+        header { background-color: #2c3e50; color: #fff; padding: 1em; text-align: center; }
+        nav, .container, #loginContainer { display: none; padding: 2em; }
+        nav { display: flex; justify-content: space-around; background-color: #34495e; padding: 1em; color: #fff; }
+        nav a { color: #fff; text-decoration: none; padding: 0.5em 1em; }
+        nav a:hover { background-color: #2c3e50; border-radius: 5px; }
+        .active { display: block; }
+        .form-group { margin-bottom: 1em; }
+        .form-group label { font-weight: bold; }
+        input, textarea { width: 100%; padding: 0.5em; margin-top: 0.5em; }
+        button { background-color: #2c3e50; color: #fff; padding: 0.5em 1em; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #34495e; }
+        .item { display: flex; justify-content: space-between; align-items: center; padding: 0.5em 0; border-bottom: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Tse Nyane Admin Panel</h1>
+    <button onclick="logout()" style="float: right; margin-top: -2.5em;">Logout</button>
+</header>
+
+<!-- Login Screen -->
+<div id="loginContainer" class="active">
+    <h2>Admin Login</h2>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username">
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password">
+    </div>
+    <button onclick="login()">Login</button>
+</div>
+
+<!-- Navigation Bar for Main Pages -->
+<nav id="mainNav" style="display: flex;">
+    <a href="index.html">Home</a>
+    <a href="institutions.html">Institutions</a>
+    <a href="opportunities.html">Opportunities</a>
+    <a href="programs.html">Programs</a>
+    <a href="resources.html">Resources</a>
+</nav>
+
+<!-- Admin Panel Navigation -->
+<nav id="adminNav">
+    <a href="#" onclick="showSection('institutions')">Institutions</a>
+    <a href="#" onclick="showSection('opportunities')">Opportunities</a>
+    <a href="#" onclick="showSection('programs')">Programs</a>
+    <a href="#" onclick="showSection('resources')">Resources</a>
+</nav>
+
+<!-- Sections -->
+<div class="container" id="institutions">
+    <h2>Institutions</h2>
+    <div class="form-group">
+        <label for="institutionName">Institution Name</label>
+        <input type="text" id="institutionName">
+    </div>
+    <button onclick="addItem('institutions')">Add Institution</button>
+    <div id="institutionsList"></div>
+</div>
+
+<div class="container" id="opportunities">
+    <h2>Opportunities</h2>
+    <div class="form-group">
+        <label for="opportunityName">Opportunity Name</label>
+        <input type="text" id="opportunityName">
+    </div>
+    <button onclick="addItem('opportunities')">Add Opportunity</button>
+    <div id="opportunitiesList"></div>
+</div>
+
+<div class="container" id="programs">
+    <h2>Programs</h2>
+    <div class="form-group">
+        <label for="programName">Program Name</label>
+        <input type="text" id="programName">
+    </div>
+    <button onclick="addItem('programs')">Add Program</button>
+    <div id="programsList"></div>
+</div>
+
+<div class="container" id="resources">
+    <h2>Resources</h2>
+    <div class="form-group">
+        <label for="resourceName">Resource Name</label>
+        <input type="text" id="resourceName">
+    </div>
+    <button onclick="addItem('resources')">Add Resource</button>
+    <div id="resourcesList"></div>
+</div>
+
+<script>
+    // Simple login check
+    function login() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        if (username === "admin" && password === "password") {
+            document.getElementById("loginContainer").classList.remove("active");
+            document.getElementById("adminNav").style.display = "flex";
+            showSection('institutions');
+        } else {
+            alert("Incorrect username or password");
+        }
+    }
+
+    // Logout functionality
+    function logout() {
+        document.getElementById("loginContainer").classList.add("active");
+        document.getElementById("adminNav").style.display = "none";
+        document.querySelectorAll('.container').forEach(section => section.classList.remove('active'));
+    }
+
+    // Show section
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('.container');
+        sections.forEach(section => section.classList.remove('active'));
+        document.getElementById(sectionId).classList.add('active');
+        renderList(sectionId);
+    }
+
+    // CRUD operations
+    function addItem(type) {
+        const input = document.getElementById(type.slice(0, -1) + "Name");
+        const name = input.value.trim();
+        if (!name) {
+            alert("Please enter a name.");
+            return;
+        }
+        
+        const items = JSON.parse(localStorage.getItem(type)) || [];
+        items.push({ id: Date.now(), name: name });
+        localStorage.setItem(type, JSON.stringify(items));
+        input.value = "";
+        renderList(type);
+    }
+
+    function renderList(type) {
+        const list = document.getElementById(type + "List");
+        list.innerHTML = "";
+        
+        const items = JSON.parse(localStorage.getItem(type)) || [];
+        items.forEach(item => {
+            const div = document.createElement("div");
+            div.className = "item";
+            div.innerHTML = `
+                <span>${item.name}</span>
+                <div>
+                    <button onclick="editItem('${type}', ${item.id})">Edit</button>
+                    <button onclick="deleteItem('${type}', ${item.id})">Delete</button>
+                </div>
+            `;
+            list.appendChild(div);
+        });
+    }
+
+    function editItem(type, id) {
+        const items = JSON.parse(localStorage.getItem(type)) || [];
+        const item = items.find(i => i.id === id);
+        const newName = prompt("Edit item name:", item.name);
+        
+        if (newName) {
+            item.name = newName;
+            localStorage.setItem(type, JSON.stringify(items));
+            renderList(type);
+        }
+    }
+
+    function deleteItem(type, id) {
+        let items = JSON.parse(localStorage.getItem(type)) || [];
+        items = items.filter(item => item.id !== id);
+        localStorage.setItem(type, JSON.stringify(items));
+        renderList(type);
+    }
+
+    // Initialize default section
+    showSection('institutions');
+</script>
+
+</body>
+</html>
+

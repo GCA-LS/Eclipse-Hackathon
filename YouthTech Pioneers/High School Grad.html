@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Recommendations</title>
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .recommendation {
+            background-color: #e0f7fa;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        /* Footer Styling */
+        .footer-top {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .footer-bottom {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .footer-top a, .footer-bottom a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer-top a:hover, .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+        /* Hover effects for title and headings */
+        .hoverable-heading:hover {
+            color: #0056b3;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Upper Footer with Page Links -->
+<header class="bg-white text-blue-600 py-4 fixed w-full top-0 z-10 shadow-md">
+    <nav class="max-w-6xl mx-auto flex justify-between items-center px-4">
+        <a href="index.html" class="flex items-center">
+            <img src="logo.png" alt="Tse Nyane Logo" class="h-10 w-auto"> <!-- Adjust the height as needed -->
+        </a>
+        <ul class="flex space-x-6">
+            <li><a href="programs.html" class="hover:underline">Programs</a></li>
+            <li><a href="institutions.html" class="hover:underline">Institutions</a></li>
+            <li><a href="opportunities.html" class="hover:underline">Opportunities</a></li>
+            <li><a href="resources.html" class="hover:underline">Resources</a></li>
+            <li><a href="High School Grad.html" class="hover:underline">High School Grad</a></li>
+            <li><a href="about.html" class="hover:underline">About</a></li> 
+        </ul>
+
+        <button class="text-blue-600 hover:bg-blue-100 p-2 rounded-full" id="loginIcon">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 48 48">
+                <path fill="currentColor"
+                    d="M24 4A10 10 0 1024 24 10 10 0 1024 4zM36.021 28H11.979C9.785 28 8 29.785 8 31.979V33.5c0 3.312 1.885 6.176 5.307 8.063C16.154 43.135 19.952 44 24 44c7.706 0 16-3.286 16-10.5v-1.521C40 29.785 38.215 28 36.021 28z"></path>
+            </svg>
+        </button>
+    </nav>
+</header>
+
+<div class="container">
+    <!-- Header Section -->
+    <header class="text-center mb-8">
+        <h1 class="text-3xl font-bold hoverable-heading">Study Recommendations Based on Your Subjects and Grades</h1>
+        <p class="text-lg text-gray-600">Select at least 6 subjects and input corresponding grades</p>
+    </header>
+
+    <!-- Main Form Section -->
+    <div class="mb-8">
+        <h2 class="text-xl font-semibold mb-4 hoverable-heading">Enter Subjects and Grades:</h2>
+        <form id="subjectForm">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Subject Input Rows will be added dynamically -->
+            </div>
+            <div class="text-center mt-6">
+                <button type="submit" class="px-6 py-3 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition duration-200">
+                    Get Recommendations
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Recommendations Section -->
+    <div class="recommendations hidden" id="recommendations">
+        <h3 class="text-2xl font-semibold mb-4 hoverable-heading">Recommended Programs:</h3>
+        <div id="course-list"></div>
+    </div>
+</div>
+
+<!-- Lower Footer with Copyright -->
+<div class="footer-bottom">
+    <p>&copy; 2024 Your Website. All rights reserved.</p>
+</div>
+
+<script>
+    // Recommendation data based on subjects and grades
+    const recommendationsData = {
+        "Mathematics": {
+            "A*": ["Bachelor of Science in Computer Science (NUL)", "Degree in Information Technology(LUCT)","Bachelor of Science in Engineering(NUL, LP)"],
+            "A": ["Bachelor of Science in Computer Science(NUL)", "Degree in Information Technology(LUCT)","Bachelor of Science in Mathematics(NUL)"],
+            "B": ["Bachelor of Science in General Nursing(NUL)", "Bachelor of Education(NUL)"],
+            "C": ["Bachelor of Arts in Education", "Bachelor of Business Administration"]
+        },
+        "Physics": {
+            "A*": ["Bachelor of Science in Engineering (NUL)", "Bachelor of Science in Physics (NUL)"],
+            "A": ["Bachelor of Science in Physics (NUL)", "Bachelor of Science in Computer Science (NUL)"],
+            "B": ["Bachelor of Science in General Nursing (NUL)", "Bachelor of Education (NUL)"],
+            "C": ["Bachelor of Arts in Education", "Bachelor of Business Administration (NUL)"]
+        },
+        "Chemistry": {
+            "A*": ["Bachelor of Science in Chemistry (NUL)", "Bachelor of Science in Biochemistry (NUL)"],
+            "A": ["Bachelor of Science in Chemistry (NUL)", "Bachelor of Science in Environmental Science (NUL)"],
+            "B": ["Bachelor of Science in General Nursing (NUL)", "Bachelor of Education (NUL)"],
+            "C": ["Bachelor of Arts in Education (NUL)", "Bachelor of Business Administration (NUL)"]
+        },
+        "Biology": {
+            "A*": ["Bachelor of Science in Biology (NUL)", "Bachelor of Science in Medicine"],
+            "A": ["Bachelor of Science in Biology (NUL)", "Bachelor of Science in Biotechnology (NUL)"],
+            "B": ["Bachelor of Science in General Nursing (NUL)", "Bachelor of Education (NUL)"],
+            "C": ["Bachelor of Arts in Education", "Bachelor of Business Administration (NUL)"]
+        },
+        // Additional subjects can be added here
+    };
+
+    // Dynamic subject rows
+    const subjects = [
+        "Mathematics", "Physics", "Chemistry", "Biology", "English", "Accounting", "Economics", "Computer Science"
+    ];
+
+    const subjectListContainer = document.querySelector('#subjectForm .grid');
+
+    // Generate input rows for each subject
+    subjects.forEach(subject => {
+        const row = document.createElement('div');
+        row.classList.add('bg-white', 'p-4', 'rounded-lg', 'shadow-md', 'border');
+
+        row.innerHTML = `
+            <label class="block text-lg font-semibold mb-2">${subject}</label>
+            <input type="checkbox" name="subject" value="${subject}" class="mr-2"> 
+            <input type="text" name="grade-${subject}" placeholder="Enter grade (A, B, C, etc.)" class="border rounded p-2 w-full mt-2" />
+        `;
+        
+        subjectListContainer.appendChild(row);
+    });
+
+    // Form submission handling
+    document.getElementById('subjectForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const selectedSubjects = [];
+        const grades = [];
+        const subjectInputs = document.querySelectorAll('input[name="subject"]:checked');
+        const gradeInputs = document.querySelectorAll('input[type="text"]');
+
+        // Collect selected subjects and grades
+        subjectInputs.forEach(input => {
+            selectedSubjects.push(input.value);
+        });
+
+        gradeInputs.forEach(input => {
+            const grade = input.value.trim().toUpperCase();
+            if (grade) {
+                grades.push({ subject: input.name.split('-')[1], grade });
+            }
+        });
+
+        // Validate that at least 6 subjects are selected
+        if (selectedSubjects.length < 6) {
+            alert("Please select at least 6 subjects.");
+            return;
+        }
+
+        // Filter and collect recommendations
+        const recommendations = [];
+        grades.forEach(({ subject, grade }) => {
+            if (recommendationsData[subject] && recommendationsData[subject][grade]) {
+                recommendations.push(...recommendationsData[subject][grade]);
+            }
+        });
+
+        // Display recommendations
+        const recommendationsElement = document.getElementById('recommendations');
+        const courseListElement = document.getElementById('course-list');
+        courseListElement.innerHTML = ''; // Clear previous recommendations
+
+        if (recommendations.length > 0) {
+            recommendations.forEach(course => {
+                const courseDiv = document.createElement('div');
+                courseDiv.classList.add('recommendation');
+                courseDiv.textContent = course;
+                courseListElement.appendChild(courseDiv);
+            });
+
+            // Show the recommendations section
+            recommendationsElement.classList.remove('hidden');
+        } else {
+            alert("No recommendations found for the selected subjects and grades.");
+            recommendationsElement.classList.add('hidden');
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Tse Nyane</title>
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles */
+        body {
+            padding-top: 64px; /* Height of the fixed header */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensures the body takes at least the full height of the viewport */
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 20;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+        }
+        footer {
+            margin-top: auto; /* Pushes the footer to the bottom */
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <header class="bg-white text-blue-600 py-4 fixed w-full top-0 z-10 shadow-md">
+        <nav class="max-w-6xl mx-auto flex justify-between items-center px-4">
+            <a href="index.html" class="flex items-center">
+                <img src="logo.png" alt="Tse Nyane Logo" class="h-10 w-auto"> <!-- Adjust the height as needed -->
+            </a>
+            <ul class="flex space-x-6">
+                <li><a href="programs.html" class="hover:underline">Programs</a></li>
+                <li><a href="institutions.html" class="hover:underline">Institutions</a></li>
+                <li><a href="opportunities.html" class="hover:underline">Opportunities</a></li>
+                <li><a href="resources.html" class="hover:underline">Resources</a></li>
+                <li><a href="about.html" class="hover:underline">About</a></li> 
+            </ul>
+
+            <button class="text-blue-600 hover:bg-blue-100 p-2 rounded-full" id="loginIcon">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 48 48">
+                    <path fill="currentColor"
+                        d="M24 4A10 10 0 1024 24 10 10 0 1024 4zM36.021 28H11.979C9.785 28 8 29.785 8 31.979V33.5c0 3.312 1.885 6.176 5.307 8.063C16.154 43.135 19.952 44 24 44c7.706 0 16-3.286 16-10.5v-1.521C40 29.785 38.215 28 36.021 28z"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+<!-- Resources Content -->
+<main class="max-w-6xl mx-auto py-8 px-4 flex-grow">
+    <section>
+        <h2 class="text-3xl font-semibold mb-6">Helpful Resources</h2>
+        <ul class="space-y-4">
+            <li><a href="https://lesotho.co.ls/2024/07/what-to-look-out-for-when-applying-to-universities-in-lesotho/" class="text-blue-600 hover:underline" onclick="openModal('applicationGuide')">Application Guide</a></li>
+            <li><a href="https://www.scholarshiptab.com/scholarships-for/lesotho" class="text-blue-600 hover:underline" onclick="openModal('scholarshipInfo')">Scholarship Information</a></li>
+            <li><a href="https://resume-example.com/cv/lesotho-country" target="_blank" class="text-blue-600 hover:underline">CV Writing Tips</a></li>
+            <li><a href="https://www.theknowledgeacademy.com/ls/interview-questions/how-to-answer-interview-questions-confidently/" target="_blank" class="text-blue-600 hover:underline">Interview Preparation</a></li>
+        </ul>
+    </section>
+</main>
+
+<!-- Footer Section -->
+<footer class="bg-blue-600 text-white py-4 text-center">
+    <p>&copy; 2024 Tse Nyane. All rights reserved. Developed by YouthTech Pioneers</p>
+</footer>
+
+<script>
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+    }
+</script>
+
+</body>
+</html>
