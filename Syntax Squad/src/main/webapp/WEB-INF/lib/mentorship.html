@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youth Empowerment</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo">Youth Empowerment</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="mentorship.html">Mentorship</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section class="about-hero">
+    <div class="container">
+    </div>
+  </section>
+
+<div class="container">
+    <h2>Mentorship Connection Platform</h2>
+
+    <!-- Mentor Directory -->
+    <div class="mentor-directory">
+        <!-- Existing mentors -->
+        <div class="mentor-card" onclick="openProfile('Kopano Makoanyane', 'Motivational Speaker', 'Available for virtual sessions')">
+            <img src="C:/Users/user/eclipse-workspace/syntaxsquad.html/src/main/webapp/WEB-INF/lib/images/img1.jpg" alt="Mentor Image">
+            <h3>Kopano Makoanyane</h3>
+            <p>Motivational Speaker</p>
+            <button>View Profile</button>
+        </div>
+
+        <div class="mentor-card" onclick="openProfile('Neo Neo', 'Online Tutor', 'Available for in-person sessions')">
+            <img src="C:/Users/user/eclipse-workspace/syntaxsquad.html/src/main/webapp/WEB-INF/lib/images/img2.jpg" alt="Mentor Image">
+            <h3>Neo Neo</h3>
+            <p>Online Tutor</p>
+            <button>View Profile</button>
+        </div>
+
+        <!-- Music Mentor -->
+        <div class="mentor-card" onclick="openProfile('Lerato Lerato', 'Music & Composition', 'Available for virtual sessions')">
+            <img src="C:/Users/user/eclipse-workspace/syntaxsquad.html/src/main/webapp/WEB-INF/lib/images/img3.jpg" alt="Mentor Image">
+            <h3>Lerato Lerato</h3>
+            <p>Music & Composition Mentor</p>
+            <button>View Profile</button>
+        </div>
+
+        <!-- Sports Mentor -->
+        <div class="mentor-card" onclick="openProfile('Katleho Jeremiah', 'Sports Coaching', 'Available for in-person sessions')">
+            <img src="C:/Users/user/eclipse-workspace/syntaxsquad.html/src/main/webapp/WEB-INF/lib/images/img4.jpg" alt="Mentor Image">
+            <h3>Katleho Jeremiah</h3>
+            <p>Sports Coaching Mentor</p>
+            <button>View Profile</button>
+        </div>
+
+        <!-- Entrepreneurship Mentor -->
+        <div class="mentor-card" onclick="openProfile('Fumane Makate', 'Entrepreneurship', 'Available for hybrid sessions')">
+            <img src="C:/Users/user/eclipse-workspace/syntaxsquad.html/src/main/webapp/WEB-INF/lib/images/img5.jpg" alt="Mentor Image">
+            <h3>Fumane Makate</h3>
+            <p>Entrepreneurship Mentor</p>
+            <button>View Profile</button>
+        </div>
+
+        <!-- Agriculture Mentor -->
+        <div class="mentor-card" onclick="openProfile('Thabo Thupa', 'Agriculture & Sustainability', 'Available for virtual sessions')">
+            <img src="C:/Users/user/eclipse-workspace/syntaxsquad.html/src/main/webapp/WEB-INF/lib/images/img6.jpg" alt="Mentor Image">
+            <h3>Thabo Thupa</h3>
+            <p>Agriculture & Sustainability Mentor</p>
+            <button>View Profile</button>
+        </div>
+    </div>
+</div>
+
+<!-- Mentor Profile Popup -->
+<div class="profile-popup" id="profilePopup">
+    <div class="profile-content">
+        <span class="close" onclick="closeProfile()">&times;</span>
+        <h3 id="mentorName">Mentor Name</h3>
+        <p><strong>Specialization:</strong> <span id="mentorField"></span></p>
+        <p><strong>Session Type:</strong> <span id="mentorAvailability"></span></p>
+        <button class="book-session" onclick="bookSession()">Book a Session</button>
+    </div>
+</div>
+
+    <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Youth Empowerment. All rights reserved. Created by Syntax Squad</p>
+    </div>
+  </footer>
+
+</body>
+</html>
